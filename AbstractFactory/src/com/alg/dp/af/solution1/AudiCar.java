@@ -35,7 +35,7 @@ public class AudiCar {
 	public void display() {
 		System.out.println(chasis.getDescription());
 		System.out.println(stereo.getDescription());
-		System.out.println(gearbox.getDescription());
+		System.out.println("chechk"+gearbox.getDescription());
 	}
 	
 
