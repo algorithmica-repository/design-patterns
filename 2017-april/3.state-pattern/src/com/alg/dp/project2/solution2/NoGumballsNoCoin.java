@@ -9,20 +9,20 @@ public class NoGumballsNoCoin implements IState {
 
 	@Override
 	public void addGumballs(int count) {
+		System.out.println("Added gumballs");
 		gbm.addCount(count);
-		gbm.setState(new GumballsNoCoin(gbm));
+		gbm.setState(gbm.getState("g_nc"));
 	}
 
 	@Override
 	public void insertCoin() {
-		// TODO Auto-generated method stub
-
+		System.out.println("Coin is inserted");
+		gbm.setState(gbm.getState("ng_c"));
 	}
 
 	@Override
 	public void turnHandle() {
-		// TODO Auto-generated method stub
-
+		System.out.println("Insert coin");
 	}
 
 }
