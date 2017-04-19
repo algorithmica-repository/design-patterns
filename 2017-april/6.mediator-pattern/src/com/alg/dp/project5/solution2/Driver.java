@@ -3,21 +3,29 @@ package com.alg.dp.project5.solution2;
 public class Driver {
 
 	public static void main(String[] args) {
+		TempDialogMediator mediator = new TempDialogMediator();
 		TempBar tempBar = new TempBar();
-		FEditBox fEditBox = new FEditBox(tempBar, 0);
-		CEditBox cEditBox = new CEditBox(tempBar, 0);
-		fEditBox.setcEditBox(cEditBox);
-		cEditBox.setfEditBox(fEditBox);				
-		FRaiseButton fRaiseButton = new FRaiseButton(fEditBox, cEditBox, tempBar);
-		FLowerButton fLowerButton = new FLowerButton(fEditBox, cEditBox, tempBar);
+		IEditBox fEditBox = new FEditBox(mediator, 0);
+		IEditBox cEditBox = new CEditBox(mediator, 0);
+		IButton frButton = new FRaiseButton(mediator);
+		IButton flButton = new FLowerButton(mediator);
+		IButton crButton = new CRaiseButton(mediator);
+		IButton clButton = new CLowerButton(mediator);
+		mediator.setcEditBox(cEditBox);
+		mediator.setClButton(clButton);
+		mediator.setCrButton(crButton);
+		mediator.setfEditBox(fEditBox);
+		mediator.setFlButton(flButton);
+		mediator.setFrButton(frButton);
+		mediator.setTempBar(tempBar);
 		
 		fEditBox.change(30);
 		System.out.println();
 		cEditBox.change(43);
 		System.out.println();
-		fRaiseButton.onClick();
+		frButton.onClick();
 		System.out.println();
-		fLowerButton.onClick();
+		flButton.onClick();
 	}
 
 }

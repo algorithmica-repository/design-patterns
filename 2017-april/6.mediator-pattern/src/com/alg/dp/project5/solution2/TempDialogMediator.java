@@ -1,6 +1,6 @@
 package com.alg.dp.project5.solution2;
 
-public class TempDialogMediator {
+public class TempDialogMediator implements IMediator {
 	private IEditBox fEditBox;
 	private IEditBox cEditBox;
 	private TempBar tempBar;
@@ -9,26 +9,17 @@ public class TempDialogMediator {
 	private IButton crButton;
 	private IButton clButton;
 	
-	public TempDialogMediator(IEditBox fEditBox, IEditBox cEditBox,
-			TempBar tempBar, IButton frButton, IButton flButton,
-			IButton crButton, IButton clButton) {
-		super();
-		this.fEditBox = fEditBox;
-		this.cEditBox = cEditBox;
-		this.tempBar = tempBar;
-		this.frButton = frButton;
-		this.flButton = flButton;
-		this.crButton = crButton;
-		this.clButton = clButton;
+	public TempDialogMediator() {
 	}
 	
 	public void notify(IEditBox editbox, float temp) {
 		if(editbox == fEditBox) {
-			cEditBox.update(temp);
+			cEditBox.update(Utils.convertFC(temp));
 			tempBar.display(temp);
 		} else {
-			fEditBox.update(temp);
-			tempBar.display(temp);
+			float tmp = Utils.convertCF(temp);
+			fEditBox.update(tmp);
+			tempBar.display(tmp);
 		}		
 	}
 	
@@ -56,5 +47,35 @@ public class TempDialogMediator {
 		}
 		
 	}
+
+	public void setfEditBox(IEditBox fEditBox) {
+		this.fEditBox = fEditBox;
+	}
+
+	public void setcEditBox(IEditBox cEditBox) {
+		this.cEditBox = cEditBox;
+	}
+
+	public void setTempBar(TempBar tempBar) {
+		this.tempBar = tempBar;
+	}
+
+	public void setFrButton(IButton frButton) {
+		this.frButton = frButton;
+	}
+
+	public void setFlButton(IButton flButton) {
+		this.flButton = flButton;
+	}
+
+	public void setCrButton(IButton crButton) {
+		this.crButton = crButton;
+	}
+
+	public void setClButton(IButton clButton) {
+		this.clButton = clButton;
+	}
+	
+	
 	
 }

@@ -1,9 +1,9 @@
 package com.alg.dp.project5.solution2;
 
 public class FLowerButton implements IButton {
-	private TempDialogMediator mediator;
+	private IMediator mediator;
 	
-	public FLowerButton(TempDialogMediator mediator) {
+	public FLowerButton(IMediator mediator) {
 		super();
 		this.mediator = mediator;
 	}

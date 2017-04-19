@@ -1,9 +1,9 @@
 package com.alg.dp.project5.solution2;
 
 public class FRaiseButton implements IButton {
-	private TempDialogMediator mediator;
+	private IMediator mediator;
 	
-	public FRaiseButton(TempDialogMediator mediator) {
+	public FRaiseButton(IMediator mediator) {
 		super();
 		this.mediator = mediator;
 	}

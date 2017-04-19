@@ -1,10 +1,10 @@
 package com.alg.dp.project5.solution2;
 
 public class FEditBox implements IEditBox {
-	private TempDialogMediator mediator;
+	private IMediator mediator;
 	private float tempInF;
 	
-	public FEditBox(TempDialogMediator mediator, float tempInF) {
+	public FEditBox(IMediator mediator, float tempInF) {
 		this.mediator = mediator;
 		this.tempInF = tempInF;
 	}

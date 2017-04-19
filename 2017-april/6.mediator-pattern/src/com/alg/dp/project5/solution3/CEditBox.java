@@ -11,7 +11,7 @@ public class CEditBox implements IWidget {
 
 	public void change(float temp) {
 		System.out.println("Edited value in Ceditbox:" + temp);
-		mediator.notify(temp);
+		mediator.notify(this, temp);
 	}
 	
 	public void update(float temp) {

@@ -11,7 +11,7 @@ public class FEditBox implements IWidget {
 
 	public void change(float temp) {
 		System.out.println("Edited value in Feditbox:" + temp);
-		mediator.notify(temp);
+		mediator.notify(this, temp);
 	}
 	
 	public void update(float temp) {

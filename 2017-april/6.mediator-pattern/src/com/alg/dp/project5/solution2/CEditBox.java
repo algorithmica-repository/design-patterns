@@ -1,10 +1,10 @@
 package com.alg.dp.project5.solution2;
 
 public class CEditBox implements IEditBox {
-	private TempDialogMediator mediator;
+	private IMediator mediator;
 	private float tempInC;
 	
-	public CEditBox(TempDialogMediator mediator, float tempInC) {
+	public CEditBox(IMediator mediator, float tempInC) {
 		this.mediator = mediator;
 		this.tempInC = tempInC;
 	}
