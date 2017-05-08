@@ -31,15 +31,6 @@ public class Directory {
 		directories.add(directory);
 	}
 	
-	/*private void auxtraverse(Directory currentdir) {
-		for(File file: currentdir.files)
-			System.out.println(file);
-		for(Directory dir: currentdir.directories) {
-			System.out.println(dir);
-			auxtraverse(dir);
-		}
-	}*/
-	
 	public void traverse() {	
 		for(File file: files)
 			System.out.println(file);
@@ -54,17 +45,7 @@ public class Directory {
 		return "Directory [name=" + name + "]";
 	}
 	
-/*	private void auxfind(Directory currentdir, String pattern) {
-		for(File file: currentdir.files) {
-			if(file.getName().indexOf(pattern) != -1)
-				System.out.println(file);
-		}
-		for(Directory dir: currentdir.directories) {
-			auxfind(dir, pattern);
-		}
-	}*/
 	public void find(String pattern) {
-		//System.out.println("Find-" + name);
 		for(File file: files) {
 			if(file.getName().indexOf(pattern) != -1)
 				System.out.println(file);
