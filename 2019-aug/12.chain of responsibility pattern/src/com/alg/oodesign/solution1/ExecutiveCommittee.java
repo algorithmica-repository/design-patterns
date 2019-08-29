@@ -1,0 +1,16 @@
+package com.alg.oodesign.solution1;
+
+public class ExecutiveCommittee extends AbstractRole {
+	private static ExecutiveCommittee ec;
+	
+	private ExecutiveCommittee(String name) {
+		super(name, "executive committee", 100000);
+	}
+
+	public static ExecutiveCommittee getInstance() {
+		if(ec == null)
+			ec = new ExecutiveCommittee("EC");
+		return ec;
+	}
+	
+}
